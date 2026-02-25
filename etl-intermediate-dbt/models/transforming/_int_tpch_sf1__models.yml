@@ -17,3 +17,28 @@ models:
       - name: customer_phone
       - name: customer_account_balance
       - name: customer_mkt_segment
+  - name: int_tpch_sf1__orders
+    description: Intermediate model that changes the date format of order_date from the staging order model
+    columns: 
+      - name: order_key
+      - name: customer_key
+      - name: order_status
+      - name: order_total_price
+      - name: order_date
+      - name: order_priority
+      - name: order_clerk
+      - name: order_ship_priority
+  - name: int_tpch_sf1__orders
+    description: Intermediate model that joins nation with supplier and joins supplier with part supplier.
+    columns: 
+      - name: partsupp_key
+      - name: part_key
+      - name: supplier_key
+      - name: part_supplier_available_quantity
+      - name: part_supplier_supply_cost
+      - name: supplier_name
+      - name: supplier_address
+      - name: nation_key
+      - name: nation_name
+      - name: supplier_phone
+      - name: supplier_account_balance
