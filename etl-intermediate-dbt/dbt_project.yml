@@ -39,3 +39,5 @@ models:
   etl_intermediate:
     staging: 
       +materialized: table
+    transforming:
+      +materialized: view

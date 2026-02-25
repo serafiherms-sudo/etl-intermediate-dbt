@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: int_tpch_sf1__region
+    description: Intermediate model that joins region and nation tables
+    columns:
+      - name: region_name
+      - name: nation_name
+      - name: nation_key    
+  - name: int_tpch_sf1__customers
+    description: Intermediate model that joins nation table with customers to show the nation where they belong to                                    
+    columns: 
+      - name: customer_key
+      - name: customer_name
+      - name: customer_address
+      - name: customer_nation
+      - name: customer_phone
+      - name: customer_account_balance
+      - name: customer_mkt_segment
