@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension table with enriched customer attributes"
+
+  - name: dim_items
+    description: "Item/Product dimension table"
+
+  - name: dim_localisation
+    description: "Localisation dimension table containing geographic information"
+
+  - name: dim_supplier
+    description: "Supplier dimension table"
+
+  - name: fct_orders
+    description: "Orders fact table containing transactional data"
