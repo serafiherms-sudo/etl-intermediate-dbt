@@ -23,7 +23,31 @@ sources:
             data_tests:
             - accepted_values:
                 arguments:
-                  values: ['O', 'F']                  
+                  values: ['O', 'F']
+          - name: l_discount
+            data_tests:
+              - is_positive
+          - name: l_quantity
+            data_tests:
+              - is_positive
+          - name: l_tax
+            data_tests:
+              - is_positive
+          - name: l_extendedprice
+            data_tests:
+              - is_positive
+          - name: l_shipdate  
+            data_tests:
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: date
+          - name: l_commitdate  
+            data_tests:
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: date
+          - name: l_receiptdate  
+            data_tests:
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: date                                     
       - name: nation
         columns:
           - name: n_nationkey
@@ -41,18 +65,35 @@ sources:
             - accepted_values:
                 arguments:
                   values: ['F', 'P', 'O']
+          - name: o_orderdate
+            data_tests:
+              - dbt_expectations.expect_column_values_to_be_of_type:
+                  column_type: date
           - name: o_orderpriority
             data_tests:
             - accepted_values:
                 arguments:
-                  values: ['1-URGENT', '2-HIGH', '3-MEDIUM', '4-NOT SPECIFIED', '5-LOW']                
+                  values: ['1-URGENT', '2-HIGH', '3-MEDIUM', '4-NOT SPECIFIED', '5-LOW']        
+          - name: o_totalprice
+            data_tests:
+              - is_positive                
       - name: part
         columns:
           - name: p_partkey
             data_tests:
               - unique
-              - not_null      
-      - name: partsupp                    
+              - not_null
+          - name: p_retailprice
+            data_tests:
+              - is_positive          
+      - name: partsupp
+        columns:
+          - name: ps_supplycost
+            data_tests:
+              - is_positive
+          - name: ps_availqty
+            data_tests:
+              - is_positive                    
       - name: region
         columns:
           - name: r_regionkey

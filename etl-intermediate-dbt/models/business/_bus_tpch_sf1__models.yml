@@ -6,6 +6,10 @@ models:
 
   - name: dim_items
     description: "Item/Product dimension table"
+    columns: 
+      - name: item_ship_date  
+      - name: item_commit_date
+      - name: item_receipt_date                                    
 
   - name: dim_localisation
     description: "Localisation dimension table containing geographic information"
@@ -14,4 +18,4 @@ models:
     description: "Supplier dimension table"
 
   - name: fct_orders
-    description: "Orders fact table containing transactional data"
+    description: "Orders fact table containing transactional data"      

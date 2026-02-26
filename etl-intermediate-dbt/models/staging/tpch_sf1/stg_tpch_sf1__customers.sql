@@ -10,7 +10,7 @@ renamed as (
     c_nationkey as customer_nation_key,
     c_phone as customer_phone,
     c_acctbal as customer_account_balance,
-    c_mktsegment as customer_mkt_segment,
+    {{ firstcap('c_mktsegment')}} as customer_mkt_segment,
     c_comment as customer_comment 
     from source
 )
