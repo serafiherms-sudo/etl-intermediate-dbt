@@ -4,7 +4,7 @@ with orders_int as (
         customer_key,
         order_status,
         order_total_price,
-        to_char(order_date, 'dd-MM-yyyy') as order_date,
+        order_date,
         order_priority,
         order_clerk,
         order_ship_priority

@@ -17,9 +17,9 @@ with items_int as (
         item_tax,
         item_return_flag,
         item_status,
-        to_char(item_ship_date, 'dd-MM-yyyy') as item_ship_date,
-        to_char(item_commit_date, 'dd-MM-yyyy') as item_commit_date,
-        to_char(item_receipt_date, 'dd-MM-yyyy') as item_receipt_date,
+        item_ship_date,
+        item_commit_date,
+        item_receipt_date,
         datediff('day', item_ship_date, item_receipt_date) as delivery_time,
         {{ firstcap('item_ship_instruct') }} as item_ship_instruct,
         {{ firstcap('item_ship_mode') }} as item_ship_mode
