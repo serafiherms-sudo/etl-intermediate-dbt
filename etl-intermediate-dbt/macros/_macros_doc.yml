@@ -1,0 +1,20 @@
+version: 2
+
+macros:
+  - name: clean_nulls
+    description: Cleans null values in the dataset.
+    arguments:
+      - name: column_name
+        type: string
+        description: The column containing null values to clean
+      - name: default_value
+        description: >
+          When non introduced it will display 'Unknown' as string.
+          But when using the macro for columns of other types set a default value according to type.
+
+  - name: first_cap
+    description: Capitalizes the first letter of string values
+    arguments:
+      - name: column_name
+        type: string
+        description: The column to capitalize
